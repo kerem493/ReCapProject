@@ -9,14 +9,17 @@ namespace Business.Constants
 {
     public static class Messages
     {
-        public static string CarAdded = "Araba eklendi.";
-        public static string CarNameInvalid = "Araba ismi geçersiz.";
+        public static string CarAdded = "Ürün Eklendi";
+        public static string CarNameInvalid = "Ürün ismi geçersiz";
+        public static string MaintenanceTime = "Sistem Bakımda";
+        public static string CarsListed = "Ürünler Listelendi";
+        public static string UsersNameInvalid = "Kullanıcı İsmi Geçersiz";
+        public static string CarNoReturnDate = "Araba Teslim Edilmemeiş";
+        public static string UserAdded = "Kullanıcı Eklendi";
+        public static string UserDeleted = "Kullanıcı Silindi";
+        public static string UserUpdated = "Kullanıcı Güncellendi";
 
+        
 
-
-        public static string BrandAdded = "Model eklendi.";
-        public static string ColorAdded = "Renk eklendi.";
-        public static string MaintenanceTime = "Sistem bakımda";
-        public static string CarListed = "Araçlar Listelendi";
     }
 }

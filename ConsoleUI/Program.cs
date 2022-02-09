@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
+using Entities.Concrete;
 using System;
 
 namespace ConsoleUI
@@ -9,7 +10,25 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarTest();
+
+            UserManager userManager = new UserManager(new EfUserDal());
+            userManager.Delete(new Users
+            {
+                Email = "asd@asd.com",
+                FirstName = "TESTKULLANICIADI",
+                LastName = "TESTSOYAD",
+                Password = "1234",
+                UserId = 2//bu değer mevcut müşterilerden birinin idsi
+
+
+            });
+
+
+
+
+
+
+            //CarTest();
 
             //BrandTest();
 
