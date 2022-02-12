@@ -18,7 +18,7 @@ namespace Business.Concrete
         {
             _rentalDal = rentalDal;
         }
-        public IResult Add(Rentals rentals)
+        public IResult Add(Rental rentals)
         {
             if (rentals.ReturnDate == null)
             {
@@ -29,22 +29,23 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarAdded);
         }
 
-        public IResult Delete(Rentals rentals)
+        public IResult Delete(Rental rentals)
+        {
+            _rentalDal.Delete(rentals);
+            return new SuccessResult("Araç kiralama işlemi iptal edildi");
+        }
+
+        public IDataResult<List<Rental>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<Rentals>> GetAll()
+        public IResult Update(Rental rentals)
         {
             throw new NotImplementedException();
         }
 
-        public IResult Update(Rentals rentals)
-        {
-            throw new NotImplementedException();
-        }
-
-        IDataResult<List<Rentals>> IRentalService.GetAll()
+        IDataResult<List<Rental>> IRentalService.GetAll()
         {
             throw new NotImplementedException();
         }

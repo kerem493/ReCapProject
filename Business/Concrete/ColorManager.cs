@@ -43,7 +43,8 @@ namespace Business.Concrete
 
         public IDataResult<List<Color>> GetCarsByColorId(int id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll
+                (p => p.ColorId == id));
         }
 
         public IResult Update(Color color)

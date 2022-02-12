@@ -19,7 +19,7 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        public IResult Add(Users users)
+        public IResult Add(User users)
         {
             if (users.FirstName.Length <2)
             {
@@ -27,13 +27,13 @@ namespace Business.Concrete
             }
 
             _userDal.Add(users);
-            return new SuccessDataResult<Users>(Messages.UserAdded);
+            return new SuccessResult(Messages.UserAdded);
 
         }
 
        
 
-        public IResult Delete(Users users)
+        public IResult Delete(User users)
         {
             if (users.FirstName.Length < 2)
             {
@@ -45,12 +45,12 @@ namespace Business.Concrete
 
         
 
-        public IDataResult<List<Users>> GetAll()
+        public IDataResult<List<User>> GetAll()
         {
-            return new SuccessDataResult<List<Users>> (_userDal.GetAll());
+            return new SuccessDataResult<List<User>> (_userDal.GetAll());
         }
 
-        public IResult Update(Users users)
+        public IResult Update(User users)
         {
             if (users.FirstName.Length < 2)
             {
@@ -62,7 +62,7 @@ namespace Business.Concrete
 
         
 
-        IDataResult<List<Users>> IUserService.GetAll()
+        IDataResult<List<User>> IUserService.GetAll()
         {
             throw new NotImplementedException();
         }

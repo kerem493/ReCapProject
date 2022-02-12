@@ -11,22 +11,13 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
 
-            UserManager userManager = new UserManager(new EfUserDal());
-            userManager.Delete(new Users
-            {
-                Email = "asd@asd.com",
-                FirstName = "TESTKULLANICIADI",
-                LastName = "TESTSOYAD",
-                Password = "1234",
-                UserId = 2//bu değer mevcut müşterilerden birinin idsi
+            //RentalManagement();
 
+            //CarColorandBrandOperation();
 
-            });
+            //ColorOperation();
 
-
-
-
-
+            //UserOperation();
 
             //CarTest();
 
@@ -34,6 +25,59 @@ namespace ConsoleUI
 
             //ColorTest();
 
+        }
+
+        private static void RentalManagement()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            rentalManager.Delete(new Rental
+            {
+                Id = 1,
+                CustomerId = 1,
+                RentDate = new DateTime(2022, 2, 6),
+                ReturnDate = new DateTime(2022, 2, 12)
+            });
+        }
+
+        private static void CarColorandBrandOperation()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+            var r = carManager.GetCarDetails();
+            if (r.Success)
+            {
+                foreach (var item in r.Data)
+                {
+                    Console.WriteLine("Aracın rengi : " + item.ColorName + " Aracın modeli : " + item.BrandName);
+                }
+            }
+            else
+            {
+                Console.WriteLine(r.Message);
+            }
+        }
+
+        private static void ColorOperation()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            foreach (var item in colorManager.GetCarsByColorId(3).Data)
+            {
+                Console.WriteLine("Seçilen renk : " + item.ColorName);
+            }
+        }
+
+        private static void UserOperation()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            userManager.Add(new User
+            {
+                Email = "asd@asd.com",
+                FirstName = "Kerem",
+                LastName = "KORKMAZ",
+                Password = "12345",
+                UserId = 3
+
+
+            });
         }
 
         //private static void ColorTest()
