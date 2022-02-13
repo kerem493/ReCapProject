@@ -40,6 +40,11 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
+        public IDataResult<Rental> GetById(int id)
+        {
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.Id == id));
+        }
+
         public IResult Update(Rental rentals)
         {
             throw new NotImplementedException();
