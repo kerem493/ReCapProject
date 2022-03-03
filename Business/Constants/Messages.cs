@@ -14,7 +14,7 @@ namespace Business.Constants
         public static string MaintenanceTime = "Sistem Bakımda";
         public static string CarsListed = "Ürünler Listelendi";
         public static string UsersNameInvalid = "Kullanıcı İsmi Geçersiz";
-        public static string CarNoReturnDate = "Araba Teslim Edilmemeiş";
+        public static string CarNoReturnDate = "Araba Teslim Edilmemiş";
         public static string UserAdded = "Kullanıcı Eklendi";
         public static string UserDeleted = "Kullanıcı Silindi";
         public static string UserUpdated = "Kullanıcı Güncellendi";

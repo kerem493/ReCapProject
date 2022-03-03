@@ -14,7 +14,7 @@ namespace Business.ValidationRules.FluentValidation
         {
             RuleFor(p => p.ColorId).NotEmpty();
             RuleFor(p => p.BrandId).NotEmpty();
-            RuleFor(p => p.Description).MinimumLength(5);
+            RuleFor(p => p.Description).MinimumLength(5).WithMessage("Minimum 5 karakter girişi yapılmalı!");
             RuleFor(p => p.Description).NotEmpty();
             RuleFor(p => p.DailyPrice).NotEmpty();
             RuleFor(p => p.DailyPrice).GreaterThan(0);
