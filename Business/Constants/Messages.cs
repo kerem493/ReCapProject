@@ -18,8 +18,8 @@ namespace Business.Constants
         public static string UserAdded = "Kullanıcı Eklendi";
         public static string UserDeleted = "Kullanıcı Silindi";
         public static string UserUpdated = "Kullanıcı Güncellendi";
-
-        
-
+        internal static string CarImageAdded = "Araç görseli eklendi.";
+        internal static string CarImageDeleted = "Araç görseli silindi.";
+        internal static string CarImageUpdated= "Araç görseli güncellendi.";
     }
 }
