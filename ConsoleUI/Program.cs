@@ -73,7 +73,7 @@ namespace ConsoleUI
                 Email = "asd@asd.com",
                 FirstName = "Kerem",
                 LastName = "KORKMAZ",
-                Password = "12345",
+                //Password = "12345",
                 UserId = 3
 
 
