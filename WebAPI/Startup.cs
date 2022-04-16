@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Concrete;
+using Core.DependencyResolvers;
+using Core.Extensions;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
@@ -51,6 +53,8 @@ namespace WebAPI
             //services.AddSingleton<IUserDal, EfUserDal>();
 
             services.AddSingleton<HttpContextAccessor, HttpContextAccessor>();
+            services.AddCors();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +64,8 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(response => response.WithOrigins("http://localhost:4200/").AllowAnyHeader().AllowAnyOrigin());
 
             app.UseHttpsRedirection();
 
