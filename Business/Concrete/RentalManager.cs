@@ -53,10 +53,12 @@ namespace Business.Concrete
             return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.Id == id));
         }
 
-        public IDataResult<List<RentalDetailDto>> GetDetails()
+        public IDataResult<List<RentalDetailDto>> GetRentalDetails()
         {
             var result = _rentalDal.GetDetails();
-            return new SuccessDataResult<List<RentalDetailDto>>(result, Messages.CarsListed);
+            return 
+                new SuccessDataResult<List<RentalDetailDto>>
+                (result, Messages.RentalDetailListed);
 
         }
 
